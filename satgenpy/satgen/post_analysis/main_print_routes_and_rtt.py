@@ -25,7 +25,10 @@ from satgen.post_analysis.print_routes_and_rtt import print_routes_and_rtt
 
 
 def main():
-    args = sys.argv[1:]
+    args = sys.argv[1:] 
+    # liu: 这里的args是argv从第一个参数开始，
+    # 因此，arg[0]是argv[1]，是实际上的第一个参数
+    # arg[1]是实际上的第二个参数
     if len(args) != 6:
         print("Must supply exactly six arguments")
         print("Usage: python -m satgen.post_analysis.main_print_routes_and_rtt.py [data_dir] [satellite_network_dir] "

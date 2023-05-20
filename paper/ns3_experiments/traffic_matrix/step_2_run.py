@@ -36,7 +36,8 @@ if local_shell.count_screens() != 0:
 commands_to_run = []
 for traffic_mode in ["specific", "general"]:
     for movement in ["static", "moving"]:
-        run_name = "run_%s_tm_pairing_kuiper_isls_%s" % (traffic_mode, movement)
+        # run_name = "run_%s_tm_pairing_kuiper_isls_%s" % (traffic_mode, movement)
+        run_name = "run_%s_tm_pairing_starlink_isls_%s" % (traffic_mode, movement)
         logs_ns3_dir = "runs/" + run_name + "/logs_ns3"
         local_shell.remove_force_recursive(logs_ns3_dir)
         local_shell.make_full_dir(logs_ns3_dir)

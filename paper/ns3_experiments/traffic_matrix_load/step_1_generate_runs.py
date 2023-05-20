@@ -102,7 +102,7 @@ for config in [
         random.seed(123456789)
         random.randint(0, 100000000)  # Legacy reasons
         seed_from_to = random.randint(0, 100000000)
-        a = set(range(1156, 1256))
+        a = set(range(1296, 1460))
         list_from_to = networkload.generate_from_to_reciprocated_random_pairing(list(a), seed_from_to)
 
         # tcp_flow_schedule.csv

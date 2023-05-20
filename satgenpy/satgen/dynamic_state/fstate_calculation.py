@@ -20,7 +20,8 @@ def calculate_fstate_shortest_path_without_gs_relaying(
     if enable_verbose_logs:
         print("  > Calculating Floyd-Warshall for graph without ground-station relays")
     # (Note: Numpy has a deprecation warning here because of how networkx uses matrices)
-    dist_sat_net_without_gs = nx.floyd_warshall_numpy(sat_net_graph_only_satellites_with_isls)
+    # dist_sat_net_without_gs = nx.floyd_warshall_numpy(sat_net_graph_only_satellites_with_isls)
+    dist_sat_net_without_gs = nx.johnson(sat_net_graph_only_satellites_with_isls)
 
     # Forwarding state
     fstate = {}

@@ -65,15 +65,27 @@ if [ "${id}" = "5" ]; then
   python main_kuiper_630.py 200 1000 isls_plus_grid ground_stations_top_100 algorithm_free_one_only_over_isls ${num_threads}
 fi
 
+# # Starlink-550 with ISLs
+# if [ "${id}" = "6" ]; then
+#   python main_starlink_550.py 200 50 isls_plus_grid ground_stations_top_100 algorithm_free_one_only_over_isls ${num_threads}
+# fi
+# if [ "${id}" = "7" ]; then
+#   python main_starlink_550.py 200 100 isls_plus_grid ground_stations_top_100 algorithm_free_one_only_over_isls ${num_threads}
+# fi
+# if [ "${id}" = "8" ]; then
+#   python main_starlink_550.py 200 1000 isls_plus_grid ground_stations_top_100 algorithm_free_one_only_over_isls ${num_threads}
+# fi
+
+# liu:
 # Starlink-550 with ISLs
 if [ "${id}" = "6" ]; then
-  python main_starlink_550.py 200 50 isls_plus_grid ground_stations_top_100 algorithm_free_one_only_over_isls ${num_threads}
+  python main_starlink_550.py 200 50 isls_plus_grid ground_stations_starlink algorithm_free_one_only_over_isls ${num_threads}
 fi
 if [ "${id}" = "7" ]; then
-  python main_starlink_550.py 200 100 isls_plus_grid ground_stations_top_100 algorithm_free_one_only_over_isls ${num_threads}
+  python main_starlink_550.py 200 100 isls_plus_grid ground_stations_starlink algorithm_free_one_only_over_isls ${num_threads}
 fi
 if [ "${id}" = "8" ]; then
-  python main_starlink_550.py 200 1000 isls_plus_grid ground_stations_top_100 algorithm_free_one_only_over_isls ${num_threads}
+  python main_starlink_550.py 200 1000 isls_plus_grid ground_stations_starlink algorithm_free_one_only_over_isls ${num_threads}
 fi
 
 # Telesat-1015 with ISLs

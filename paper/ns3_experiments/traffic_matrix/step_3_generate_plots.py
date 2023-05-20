@@ -37,7 +37,7 @@ def plot_pair_path_max_utilization(path_networkx_data, run_name, src_node_id, ds
             if is_static:
                 break
 
-    # Read in the utilization file
+    
     link_to_utilization = {}
     with open("runs/" + run_name + "/logs_ns3/isl_utilization.csv", "r") as f_utilization_in:
         for line in f_utilization_in:
@@ -137,7 +137,7 @@ def plot_pair_path_max_utilization(path_networkx_data, run_name, src_node_id, ds
     if is_static:
         local_shell.copy_file("plots/plot_pair_path_available_bandwidth_no_red_box.plt", "temp.plt")
     else:
-        local_shell.copy_file("plots/plot_pair_path_available_bandwidth.plt", "temp.plt")
+        local_shell.copy_file("plots/plot_pair_path_available_bandwidth_no_red_box.plt", "temp.plt")
     local_shell.sed_replace_in_file_plain("temp.plt", "[DATA-FILE]", data_filename_at_1s)
     local_shell.sed_replace_in_file_plain("temp.plt", "[OUTPUT-FILE]", pdf_filename)
     local_shell.perfect_exec("gnuplot temp.plt")
@@ -160,14 +160,14 @@ def main():
             # Pair path max utilization
             plot_pair_path_max_utilization(
                 "../../satgenpy_analysis/data/"
-                "kuiper_630_isls_plus_grid_ground_stations_top_100_algorithm_free_one_only_over_isls/100ms_for_200s"
+                "starlink_550_isls_plus_grid_ground_stations_starlink_algorithm_free_one_only_over_isls/100ms_for_200s"
                 "/manual/data",
-                "run_%s_tm_pairing_kuiper_isls_%s" % (traffic_mode, movement),
-                1174, 1229, movement == "static"
+                "run_%s_tm_pairing_starlink_isls_%s" % (traffic_mode, movement),
+                1429, 1412, movement == "static"
             )
 
             # Perform simple flow plot for debugging purposes
-            run_name = "run_%s_tm_pairing_kuiper_isls_%s" % (traffic_mode, movement)
+            run_name = "run_%s_tm_pairing_starlink_isls_%s" % (traffic_mode, movement)
             local_shell.make_full_dir("pdf/" + run_name)
             local_shell.make_full_dir("data/" + run_name)
             local_shell.perfect_exec(
